@@ -3,8 +3,8 @@
 ## setup
 
 ```
-$ git clone git@github.com:hideokamoto/alexa-nodejs-helloworld.git
-$ cd alexa-nodejs-helloworld
+$ git clone git@github.com:hideokamoto/alexa-aws-quiz.git
+$ cd alexa-aws-quiz
 $ npm i
 ```
 
