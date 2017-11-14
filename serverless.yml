@@ -1,0 +1,38 @@
+service: alexa-hello-world
+provider:
+  name: aws
+  runtime: nodejs6.10
+  timeout: 30
+  stage: dev
+  memorySize: ${self:custom.memorySize.${self:custom.stage}, self:custom.memorySize.default}
+  profile: ${opt:profile, self:custom.defaultProfile}
+  region: ${opt:region, self:custom.defaultRegion}
+
+custom:
+  stage:  ${opt:stage, self:provider.stage}
+  defaultProfile: default
+  defaultRegion: us-east-1
+  logRetentionInDays:
+    dev: "14"
+    prod: "90"
+    default: "3"
+  memorySize:
+    dev: 128
+    prod: 512
+    default: 128
+
+package:
+  include:
+    - node_modules/
+
+functions:
+  hello:
+    handler: index.handler
+    events:
+      - alexaSkill
+
+resources:
+  Resources:
+    HelloLogGroup:
+      Properties:
+        RetentionInDays: ${self:custom.logRetentionInDays.${self:custom.stage}, self:custom.logRetentionInDays.default}
