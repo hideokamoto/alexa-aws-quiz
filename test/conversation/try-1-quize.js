@@ -15,8 +15,7 @@ conversation(opts)
   .userSays('AMAZON.YesIntent')
   .plainResponse
   .shouldContain('Quiz1')
-  .shouldContain('It is a fully managed')
-  .shouldContain('Amazon WorkSpaces')
+  .shouldContain('What is the service name ?')
   .userSays('NumberGuessIntent', {number: '2'})
   .plainResponse
   .shouldContain('is correct')
@@ -33,8 +32,7 @@ conversation(opts)
   .userSays('AMAZON.YesIntent')
   .plainResponse
   .shouldContain('Quiz1')
-  .shouldContain('It is a fully managed')
-  .shouldContain('Amazon WorkSpaces')
+  .shouldContain('What is the service name ?')
   .userSays('NumberGuessIntent', {number: '3'})
   .plainResponse
   .shouldContain('is not correct')

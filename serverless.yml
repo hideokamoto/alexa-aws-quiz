@@ -1,9 +1,9 @@
-service: alexa-hello-world
+service: alexa-aws-quiz
 provider:
   name: aws
   runtime: nodejs6.10
   timeout: 30
-  stage: dev
+  stage: development
   memorySize: ${self:custom.memorySize.${self:custom.stage}, self:custom.memorySize.default}
   profile: ${opt:profile, self:custom.defaultProfile}
   region: ${opt:region, self:custom.defaultRegion}
