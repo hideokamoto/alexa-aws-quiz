@@ -20,3 +20,28 @@ conversation(opts)
   .plainResponse
   .shouldContain('Ok, see you next time!')
   .end()
+
+opts.name = 'Use ask about'
+conversation(opts)
+  .userSays('LaunchRequest')
+  .plainResponse
+  .shouldContain('Welcome to AWS quiz game. Would you like to play?')
+  .userSays('AboutIntent')
+  .plainResponse
+  .shouldContain('This is a quiz game learning about AWS serivices.')
+  .shouldContain('Would you like to play?')
+  .userSays('AMAZON.NoIntent')
+  .plainResponse
+  .shouldContain('Ok, see you next time!')
+  .end()
+
+opts.name = 'Ask about directly'
+conversation(opts)
+  .userSays('AboutIntent')
+  .plainResponse
+  .shouldContain('This is a quiz game learning about AWS serivices.')
+  .shouldContain('Would you like to play?')
+  .userSays('AMAZON.NoIntent')
+  .plainResponse
+  .shouldContain('Ok, see you next time!')
+  .end()
