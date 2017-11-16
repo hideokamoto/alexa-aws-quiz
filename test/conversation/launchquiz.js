@@ -11,8 +11,8 @@ opts.name = 'Use direct start quiz and successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchQuizIntent')
   .plainResponse
-  .shouldContain('Quiz1')
-  .shouldContain('What is the service name ?')
+  .shouldContain('Question.')
+  .shouldContain('What is the service name?')
   .userSays('NumberGuessIntent', {number: '2'})
   .plainResponse
   .shouldContain('is correct')

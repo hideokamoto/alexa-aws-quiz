@@ -11,11 +11,11 @@ opts.name = 'Use successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to AWS quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
   .userSays('AMAZON.YesIntent')
   .plainResponse
-  .shouldContain('Quiz1')
-  .shouldContain('What is the service name ?')
+  .shouldContain('Question')
+  .shouldContain('What is the service name?')
   .userSays('NumberGuessIntent', {number: '2'})
   .plainResponse
   .shouldContain('is correct')
@@ -28,11 +28,11 @@ opts.name = 'Use wrong 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to AWS quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
   .userSays('AMAZON.YesIntent')
   .plainResponse
-  .shouldContain('Quiz1')
-  .shouldContain('What is the service name ?')
+  .shouldContain('Question')
+  .shouldContain('What is the service name?')
   .userSays('NumberGuessIntent', {number: '3'})
   .plainResponse
   .shouldContain('is not correct')

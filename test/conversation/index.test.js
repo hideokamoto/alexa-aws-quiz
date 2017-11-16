@@ -11,10 +11,10 @@ opts.name = 'Use help and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to AWS quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
   .userSays('AMAZON.HelpIntent')
   .plainResponse
-  .shouldContain('This is a quiz game learning about AWS serivices.')
+  .shouldContain('This is a quiz game learning about cloud serivices.')
   .shouldContain('Would you like to play?')
   .userSays('AMAZON.NoIntent')
   .plainResponse
@@ -25,10 +25,10 @@ opts.name = 'Use ask about'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to AWS quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
   .userSays('AboutIntent')
   .plainResponse
-  .shouldContain('This is a quiz game learning about AWS serivices.')
+  .shouldContain('This is a quiz game learning about cloud serivices.')
   .shouldContain('Would you like to play?')
   .userSays('AMAZON.NoIntent')
   .plainResponse
@@ -39,7 +39,7 @@ opts.name = 'Ask about directly'
 conversation(opts)
   .userSays('AboutIntent')
   .plainResponse
-  .shouldContain('This is a quiz game learning about AWS serivices.')
+  .shouldContain('This is a quiz game learning about cloud serivices.')
   .shouldContain('Would you like to play?')
   .userSays('AMAZON.NoIntent')
   .plainResponse
