@@ -41,21 +41,20 @@ conversation(opts)
   .shouldContain('Ok, see you next time!')
   .end()
 
-return
 opts.locale = 'ja-JP'
-opts.name = 'Use wrong 1 question and exit'
+opts.name = 'Use wrong 1 question and exit in Japanese'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
+  .shouldContain('クラウドクイズゲームへようこそ。ゲームを始めますか？')
   .userSays('AMAZON.YesIntent')
   .plainResponse
-  .shouldContain('Question')
-  .shouldContain('What is the service name?')
+  .shouldContain('問題。')
+  .shouldContain('このサービスは次のうちどれでしょう？')
   .userSays('NumberGuessIntent', {number: '3'})
   .plainResponse
-  .shouldContain('is not correct')
+  .shouldContain('ではありません')
   .userSays('AMAZON.NoIntent')
   .plainResponse
-  .shouldContain('Ok, see you next time!')
+  .shouldContain('またのご利用をお待ちしております。')
   .end()
