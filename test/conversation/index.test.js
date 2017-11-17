@@ -11,7 +11,7 @@ opts.name = 'Use help and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
   .userSays('AMAZON.HelpIntent')
   .plainResponse
   .shouldContain('This is a quiz game learning about cloud serivices.')
@@ -25,7 +25,7 @@ opts.name = 'Use ask about'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse
-  .shouldContain('Welcome to cloud quiz game. Would you like to play?')
+  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
   .userSays('AboutIntent')
   .plainResponse
   .shouldContain('This is a quiz game learning about cloud serivices.')
