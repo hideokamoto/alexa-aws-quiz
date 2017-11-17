@@ -35,6 +35,7 @@ conversation(opts)
   .shouldContain('Ok, see you next time!')
   .end()
 
+/*
 opts.name = 'Ask about directly'
 conversation(opts)
   .userSays('AboutIntent')
@@ -45,3 +46,4 @@ conversation(opts)
   .plainResponse
   .shouldContain('Ok, see you next time!')
   .end()
+*/
