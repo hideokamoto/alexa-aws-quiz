@@ -1,4 +1,6 @@
-# Alexa Skill Example
+# Alexa Cloud Quiz Game Skill backend
+
+[![Build Status](https://travis-ci.org/hideokamoto/alexa-aws-quiz.svg?branch=master)](https://travis-ci.org/hideokamoto/alexa-aws-quiz)
 
 ## setup
 
