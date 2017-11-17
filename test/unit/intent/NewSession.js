@@ -7,28 +7,25 @@ const {
   event,
   executeFunction
 } = helpers
-/*
 describe('LaunchRequest', () => {
   beforeEach(() => {
     event.request.type = 'NewSession'
   })
-  it('Say hallo world', () => {
+  it('welcome ssml', () => {
     const succeed = (data) => {
       const { response } = data
-      console.log(response)
       const {
         outputSpeech
       } = response
-      assert.deepEqual(
-        outputSpeech,
-        {
-          type: 'SSML',
-          ssml: '<speak> Welcome to High Low guessing game. You have played 0 times. Would you like to play? </speak>'
-        }
-      )
+      assert.equal(outputSpeech.type, 'SSML')
     }
-    const fail = () => assert.ok(false)
+    const fail = (e) => {
+      if (e.name === 'AssertionError') {
+        assert.deepEqual(e.expected, e.actual)
+      } else {
+        assert.ok(false)
+      }
+    }
     executeFunction(event, {succeed, fail}, handler)
   })
 })
-*/
