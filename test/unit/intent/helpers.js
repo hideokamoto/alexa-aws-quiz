@@ -1,3 +1,5 @@
+const assert = require('power-assert')
+
 exports.event = {
   'session': {
     'new': true,
@@ -40,4 +42,12 @@ exports.event = {
 exports.executeFunction = (event, assertion, handler) => {
   // eslint-disable-next-line handle-callback-err
   handler(event, assertion, (error, data) => {})
+}
+
+exports.fail = (e) => {
+  if (e.name === 'AssertionError') {
+    assert.deepEqual(e.expected, e.actual)
+  } else {
+    assert.ok(false)
+  }
 }

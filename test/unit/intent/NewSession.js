@@ -5,7 +5,8 @@ const { handler } = MyLambdaFunction
 const helpers = require('./helpers')
 const {
   event,
-  executeFunction
+  executeFunction,
+  fail
 } = helpers
 describe('LaunchRequest', () => {
   beforeEach(() => {
@@ -15,16 +16,11 @@ describe('LaunchRequest', () => {
     const succeed = (data) => {
       const { response } = data
       const {
-        outputSpeech
+        outputSpeech,
+        shouldEndSession
       } = response
       assert.equal(outputSpeech.type, 'SSML')
-    }
-    const fail = (e) => {
-      if (e.name === 'AssertionError') {
-        assert.deepEqual(e.expected, e.actual)
-      } else {
-        assert.ok(false)
-      }
+      assert.equal(shouldEndSession, false)
     }
     executeFunction(event, {succeed, fail}, handler)
   })
