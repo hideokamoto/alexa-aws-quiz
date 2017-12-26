@@ -1,4 +1,4 @@
-/* global describe, beforeEach, it */
+/* global describe, beforeEach, afterEach, it */
 const assert = require('power-assert')
 const MyLambdaFunction = require('../../../index.js')
 const { handler } = MyLambdaFunction
@@ -13,6 +13,9 @@ describe('StopIntent', () => {
   beforeEach(() => {
     event.request.type = 'AMAZON.StopIntent'
     event.session.new = false
+  })
+  afterEach(() => {
+    event.request.locale = 'en-US'
   })
   it('should end the session [English]', () => {
     event.request.locale = 'en-US'
