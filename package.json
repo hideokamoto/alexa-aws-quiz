@@ -37,6 +37,7 @@
     "*.js": [
       "prettier-eslint --write",
       "eslint",
+      "npm test",
       "git add"
     ]
   }
