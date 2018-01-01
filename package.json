@@ -7,7 +7,9 @@
     "test": " ./node_modules/mocha/bin/_mocha test/*/*",
     "test:unit": " ./node_modules/mocha/bin/_mocha test/unit/*/*",
     "test:conversation": " ./node_modules/mocha/bin/_mocha test/conversation/*/*",
-    "lint": "./node_modules/eslint/bin/eslint.js ./"
+    "lint": "./node_modules/eslint/bin/eslint.js ./",
+    "precommit": "lint-staged",
+    "format": "prettier-eslint --write \"lib/**/*.js\" \"test/**/*.js\""
   },
   "keywords": [],
   "author": "hidetaka okamoto",
@@ -23,7 +25,19 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "mocha": "^4.0.1",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "prettier": "^1.9.2",
+    "prettier-eslint": "^8.7.0",
+    "prettier-eslint-cli": "^4.7.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "eslint",
+      "git add"
+    ]
   }
 }

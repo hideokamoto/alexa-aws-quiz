@@ -10,51 +10,45 @@ const opts = {
 opts.name = 'Use successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse
-  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
+  .plainResponse.shouldContain(
+    'Welcome to cloud quiz game.Would you like to play?'
+  )
   .userSays('AMAZON.YesIntent')
-  .plainResponse
-  .shouldContain('Question')
+  .plainResponse.shouldContain('Question')
   .shouldContain('What is the service name?')
-  .userSays('NumberGuessIntent', {number: '2'})
-  .plainResponse
-  .shouldContain('is correct')
+  .userSays('NumberGuessIntent', { number: '2' })
+  .plainResponse.shouldContain('is correct')
   .userSays('AMAZON.NoIntent')
-  .plainResponse
-  .shouldContain('Ok, see you next time!')
+  .plainResponse.shouldContain('Ok, see you next time!')
   .end()
 
 opts.name = 'Use wrong 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse
-  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
+  .plainResponse.shouldContain(
+    'Welcome to cloud quiz game.Would you like to play?'
+  )
   .userSays('AMAZON.YesIntent')
-  .plainResponse
-  .shouldContain('Question')
+  .plainResponse.shouldContain('Question')
   .shouldContain('What is the service name?')
-  .userSays('NumberGuessIntent', {number: '3'})
-  .plainResponse
-  .shouldContain('is not correct')
+  .userSays('NumberGuessIntent', { number: '3' })
+  .plainResponse.shouldContain('is not correct')
   .userSays('AMAZON.NoIntent')
-  .plainResponse
-  .shouldContain('Ok, see you next time!')
+  .plainResponse.shouldContain('Ok, see you next time!')
   .end()
 
 opts.locale = 'ja-JP'
 opts.name = 'Use wrong 1 question and exit in Japanese'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse
-  .shouldContain('クラウドクイズゲームへようこそ。ゲームを始めますか？')
+  .plainResponse.shouldContain(
+    'クラウドクイズゲームへようこそ。ゲームを始めますか？'
+  )
   .userSays('AMAZON.YesIntent')
-  .plainResponse
-  .shouldContain('問題。')
+  .plainResponse.shouldContain('問題。')
   .shouldContain('このサービスは次のうちどれでしょう？')
-  .userSays('NumberGuessIntent', {number: '3'})
-  .plainResponse
-  .shouldContain('ではありません')
+  .userSays('NumberGuessIntent', { number: '3' })
+  .plainResponse.shouldContain('ではありません')
   .userSays('AMAZON.NoIntent')
-  .plainResponse
-  .shouldContain('またのご利用をお待ちしております。')
+  .plainResponse.shouldContain('またのご利用をお待ちしております。')
   .end()
