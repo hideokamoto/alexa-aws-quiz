@@ -10,29 +10,31 @@ const opts = {
 opts.name = 'Use help and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse
-  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
+  .plainResponse.shouldContain(
+    'Welcome to cloud quiz game.Would you like to play?'
+  )
   .userSays('AMAZON.HelpIntent')
-  .plainResponse
-  .shouldContain('This is a quiz game learning about cloud serivices.')
+  .plainResponse.shouldContain(
+    'This is a quiz game learning about cloud serivices.'
+  )
   .shouldContain('Would you like to play?')
   .userSays('AMAZON.NoIntent')
-  .plainResponse
-  .shouldContain('Ok, see you next time!')
+  .plainResponse.shouldContain('Ok, see you next time!')
   .end()
 
 opts.name = 'Use ask about'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse
-  .shouldContain('Welcome to cloud quiz game.Would you like to play?')
+  .plainResponse.shouldContain(
+    'Welcome to cloud quiz game.Would you like to play?'
+  )
   .userSays('AboutIntent')
-  .plainResponse
-  .shouldContain('This is a quiz game learning about cloud serivices.')
+  .plainResponse.shouldContain(
+    'This is a quiz game learning about cloud serivices.'
+  )
   .shouldContain('Would you like to play?')
   .userSays('AMAZON.NoIntent')
-  .plainResponse
-  .shouldContain('Ok, see you next time!')
+  .plainResponse.shouldContain('Ok, see you next time!')
   .end()
 
 /*
