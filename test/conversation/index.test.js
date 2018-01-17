@@ -11,13 +11,13 @@ opts.name = 'Use help and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Would you like to play?'
+    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
   )
   .userSays('AMAZON.HelpIntent')
   .plainResponse.shouldContain(
     'This is a quiz game learning about cloud serivices.'
   )
-  .shouldContain('Would you like to play?')
+  .shouldContain('Which game do you want to joy?')
   .userSays('AMAZON.NoIntent')
   .plainResponse.shouldContain('Ok, see you next time!')
   .end()
@@ -26,13 +26,13 @@ opts.name = 'Use ask about'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Would you like to play?'
+    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
   )
   .userSays('AboutIntent')
   .plainResponse.shouldContain(
     'This is a quiz game learning about cloud serivices.'
   )
-  .shouldContain('Would you like to play?')
+  .shouldContain('Which game do you want to joy?')
   .userSays('AMAZON.NoIntent')
   .plainResponse.shouldContain('Ok, see you next time!')
   .end()
@@ -43,7 +43,7 @@ conversation(opts)
   .userSays('AboutIntent')
   .plainResponse
   .shouldContain('This is a quiz game learning about cloud serivices.')
-  .shouldContain('Would you like to play?')
+  .shouldContain('Which game do you want to joy?')
   .userSays('AMAZON.NoIntent')
   .plainResponse
   .shouldContain('Ok, see you next time!')

@@ -1,5 +1,5 @@
 const conversation = require('alexa-conversation')
-const app = require('../../index.js')
+const app = require('../../../index.js')
 
 const opts = {
   appId: 'your-app-id',
@@ -8,17 +8,16 @@ const opts = {
 }
 
 opts.locale = 'ja-JP'
-opts.name = 'Use wrong 1 question and exit in Japanese'
+opts.name = 'Ask quiz type and start karuta game'
 conversation(opts)
   .userSays('LaunchRequest')
+  .plainResponse.shouldContain('クラウドクイズゲームへようこそ。')
   .plainResponse.shouldContain(
-    'クラウドクイズゲームへようこそ。クイズモードとカルタモード。どちらのモードで遊びますか？'
+    'クイズモードとカルタモード。どちらのモードで遊びますか？'
   )
-  .userSays('AMAZON.YesIntent')
+  .userSays('LaunchQuizIntent')
   .plainResponse.shouldContain('問題。')
   .shouldContain('このサービスは次のうちどれでしょう？')
-  .userSays('Unhandled')
-  .plainResponse.shouldContain('すみません。よく聞き取れませんでした。')
   .userSays('NumberGuessIntent', { number: '3' })
   .plainResponse.shouldContain('ではありません')
   .userSays('AMAZON.NoIntent')

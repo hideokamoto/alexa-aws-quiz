@@ -22,7 +22,7 @@ opts.name = 'User starts quiz and successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Would you like to play?'
+    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
   )
   .userSays('LaunchQuizIntent')
   .plainResponse.shouldContain('Question.')
@@ -38,7 +38,7 @@ opts.name = 'Use wrong 1 question and exit in Japanese'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse.shouldContain(
-    'クラウドクイズゲームへようこそ。ゲームを始めますか？'
+    'クラウドクイズゲームへようこそ。クイズモードとカルタモード。どちらのモードで遊びますか？'
   )
   .userSays('LaunchQuizIntent')
   .plainResponse.shouldContain('問題。')
