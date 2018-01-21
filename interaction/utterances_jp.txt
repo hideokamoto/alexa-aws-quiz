@@ -1,18 +1,11 @@
 NumberGuessIntent {number}
 NumberGuessIntent それは {number} 番です
-NumberGuessIntent {number}番です
-NumberGuessIntent {number}番
+NumberGuessIntent {number} 番です
+NumberGuessIntent {number} 番
 NumberGuessIntent 正解は {number}
 NumberGuessIntent 正解は {number} 番
 NumberGuessIntent 正解は {number} 番です
-
-AboutIntent tell me the skill
-AboutIntent tell me about the skill
-AboutIntent what is the skill
-AboutIntent what about the skill
-
 LaunchQuizIntent クイズをはじめてください
-LaunchQuizIntent クイズゲームをはじめてください
 LaunchQuizIntent ゲームをはじめてください
 LaunchQuizIntent クイズをはじめて
 LaunchQuizIntent クイズゲームをはじめて
@@ -20,3 +13,14 @@ LaunchQuizIntent ゲームをはじめて
 LaunchQuizIntent クイズを開始
 LaunchQuizIntent クイズゲームを開始
 LaunchQuizIntent ゲームを開始
+LaunchQuizIntent クイズ
+LaunchQuizIntent クイズがやりたい
+LaunchQuizIntent クイズゲーム
+LaunchKarutaIntent カルタがやりたい
+LaunchKarutaIntent カルタをはじめてください
+LaunchKarutaIntent カルタをはじめて
+LaunchKarutaIntent カルタゲームをはじめて
+LaunchKarutaIntent カルタを開始
+LaunchKarutaIntent カルタゲームを開始
+LaunchKarutaIntent カルタ
+LaunchKarutaIntent カルタゲーム

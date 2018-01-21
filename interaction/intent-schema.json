@@ -16,6 +16,9 @@
       "intent": "LaunchQuizIntent"
     },
     {
+      "intent": "LaunchKarutaIntent"
+    },
+    {
       "intent": "AMAZON.YesIntent"
     },
     {

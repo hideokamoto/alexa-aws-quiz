@@ -4,13 +4,15 @@ NumberGuessIntent is it {number}
 NumberGuessIntent it is {number}
 NumberGuessIntent answer is {number}
 NumberGuessIntent the answer is {number}
-
-AboutIntent tell me the skill
-AboutIntent tell me about the skill
-AboutIntent what is the skill
-AboutIntent what about the skill
-
 LaunchQuizIntent start quiz game
 LaunchQuizIntent start quiz
 LaunchQuizIntent let's quiz
 LaunchQuizIntent let's start quiz
+LaunchQuizIntent quiz
+LaunchQuizIntent quiz game
+LaunchKarutaIntent start karuta game
+LaunchKarutaIntent start karuta
+LaunchKarutaIntent let's karuta
+LaunchKarutaIntent let's start karuta
+LaunchKarutaIntent karuta game
+LaunchKarutaIntent karuta
