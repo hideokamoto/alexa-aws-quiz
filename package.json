@@ -15,7 +15,8 @@
   "author": "hidetaka okamoto",
   "license": "MIT",
   "dependencies": {
-    "alexa-sdk": "^1.0.19"
+    "alexa-sdk": "^1.0.19",
+    "ssml-builder": "^0.4.1"
   },
   "devDependencies": {
     "alexa-conversation": "^0.2.0",
