@@ -10,9 +10,8 @@ const opts = {
 opts.name = 'Use successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
-  )
+  .plainResponse.shouldContain('Welcome to cloud quiz game.')
+  .shouldContain('Quiz mode, or Karuta mode. Which game do you want to joy?')
   .userSays('AMAZON.YesIntent')
   .plainResponse.shouldContain('Question')
   .shouldContain('What is the service name?')
@@ -25,9 +24,8 @@ conversation(opts)
 opts.name = 'Use wrong 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
-  )
+  .plainResponse.shouldContain('Welcome to cloud quiz game.')
+  .shouldContain('Quiz mode, or Karuta mode. Which game do you want to joy?')
   .userSays('AMAZON.YesIntent')
   .plainResponse.shouldContain('Question')
   .shouldContain('What is the service name?')

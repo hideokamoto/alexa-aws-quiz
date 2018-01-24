@@ -10,9 +10,8 @@ const opts = {
 opts.name = 'Use help and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
-  )
+  .plainResponse.shouldContain('Welcome to cloud quiz game.')
+  .shouldContain('Quiz mode, or Karuta mode. Which game do you want to joy?')
   .userSays('AMAZON.HelpIntent')
   .plainResponse.shouldContain(
     'This is a quiz game learning about cloud serivices.'
@@ -25,9 +24,8 @@ conversation(opts)
 opts.name = 'Use ask about'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
-  )
+  .plainResponse.shouldContain('Welcome to cloud quiz game.')
+  .shouldContain('Quiz mode, or Karuta mode. Which game do you want to joy?')
   .userSays('AboutIntent')
   .plainResponse.shouldContain(
     'This is a quiz game learning about cloud serivices.'

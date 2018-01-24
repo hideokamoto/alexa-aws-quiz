@@ -21,9 +21,8 @@ conversation(opts)
 opts.name = 'User starts quiz and successd 1 question and exit'
 conversation(opts)
   .userSays('LaunchRequest')
-  .plainResponse.shouldContain(
-    'Welcome to cloud quiz game.Quiz mode or Karuta mode.Which game do you want to joy?'
-  )
+  .plainResponse.shouldContain('Welcome to cloud quiz game.')
+  .shouldContain('Quiz mode, or Karuta mode. Which game do you want to joy?')
   .userSays('LaunchQuizIntent')
   .plainResponse.shouldContain('Question.')
   .shouldContain('What is the service name?')

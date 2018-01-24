@@ -24,6 +24,17 @@ conversation(opts)
   .plainResponse.shouldContain('またのご利用をお待ちしております。')
   .end()
 
+opts.name = 'Launch quiz game by one shot request'
+conversation(opts)
+  .userSays('LaunchQuizIntent')
+  .plainResponse.shouldContain('問題。')
+  .shouldContain('このサービスは次のうちどれでしょう？')
+  .userSays('NumberGuessIntent', { number: '3' })
+  .plainResponse.shouldContain('ではありません')
+  .userSays('AMAZON.NoIntent')
+  .plainResponse.shouldContain('またのご利用をお待ちしております。')
+  .end()
+
 opts.name = 'Play quiz game twice.'
 conversation(opts)
   .userSays('LaunchRequest')
