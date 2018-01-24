@@ -16,5 +16,11 @@ conversation(opts)
     'クイズモードとカルタモード。どちらのモードで遊びますか？'
   )
   .userSays('LaunchKarutaIntent')
-  .plainResponse.shouldContain('')
+  .plainResponse.shouldContain('カルタゲームを始めます。')
+  .end()
+
+opts.name = 'Launch karuta game by one shot request'
+conversation(opts)
+  .userSays('LaunchKarutaIntent')
+  .plainResponse.shouldContain('カルタゲームを始めます。')
   .end()
