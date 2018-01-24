@@ -24,3 +24,31 @@ conversation(opts)
   .userSays('LaunchKarutaIntent')
   .plainResponse.shouldContain('カルタゲームを始めます。')
   .end()
+
+opts.name = 'Play karuta game at onece'
+conversation(opts)
+  .userSays('LaunchRequest')
+  .plainResponse.shouldContain('クラウドクイズゲームへようこそ。')
+  .plainResponse.shouldContain(
+    'クイズモードとカルタモード。どちらのモードで遊びますか？'
+  )
+  .userSays('LaunchKarutaIntent')
+  .plainResponse.shouldContain('カルタゲームを始めます。')
+  .shouldContain('次の問題に挑戦しますか？')
+  .userSays('AMAZON.NoIntent')
+  .plainResponse.shouldContain('またのご利用をお待ちしております。')
+  .end()
+
+opts.name = 'Play karuta game at onece'
+conversation(opts)
+  .userSays('LaunchRequest')
+  .plainResponse.shouldContain('クラウドクイズゲームへようこそ。')
+  .plainResponse.shouldContain(
+    'クイズモードとカルタモード。どちらのモードで遊びますか？'
+  )
+  .userSays('LaunchKarutaIntent')
+  .plainResponse.shouldContain('カルタゲームを始めます。')
+  .shouldContain('次の問題に挑戦しますか？')
+  .userSays('AMAZON.YesIntent')
+  .plainResponse.shouldContain('問題。')
+  .end()
