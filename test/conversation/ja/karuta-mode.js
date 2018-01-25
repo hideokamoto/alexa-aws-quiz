@@ -81,7 +81,7 @@ conversation(opts)
   .plainResponse.shouldContain('またのご利用をお待ちしております。')
   .end()
 
-opts.name = 'Play karuta game and stop session by SessionEndedRequest'
+opts.name = 'Play karuta game at onece and stop session by SessionEndedRequest'
 conversation(opts)
   .userSays('LaunchRequest')
   .plainResponse.shouldContain('クラウドクイズゲームへようこそ。')
