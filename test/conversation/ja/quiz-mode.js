@@ -2,7 +2,7 @@ const conversation = require('alexa-conversation')
 const app = require('../../../index.js')
 
 const opts = {
-  appId: 'your-app-id',
+  appId: 'amzn1.ask.skill.8d4f3bd7-e62b-4506-b5a9-67f738f78022',
   app: app,
   handler: app.handler
 }
