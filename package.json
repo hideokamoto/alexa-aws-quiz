@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": " ./node_modules/mocha/bin/_mocha test/*/*",
-    "test:unit": " ./node_modules/mocha/bin/_mocha test/unit/*/*",
+    "test:unit": " ./node_modules/mocha/bin/_mocha test/unit/* test/unit/*/*",
     "test:conversation": " ./node_modules/mocha/bin/_mocha test/conversation/*/*",
     "lint": "./node_modules/eslint/bin/eslint.js ./",
     "precommit": "lint-staged",
