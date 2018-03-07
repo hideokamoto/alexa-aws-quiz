@@ -21,6 +21,14 @@ describe('LaunchKarutaIntent', () => {
     }
     executeFunction(event, { succeed, fail }, handler)
   })
+  it('should include valid game type', () => {
+    event.request.locale = 'ja-JP'
+    const succeed = data => {
+      const { sessionAttributes } = data
+      assert.equal(sessionAttributes.gameType, 'karuta')
+    }
+    executeFunction(event, { succeed, fail }, handler)
+  })
   it('start karuta in English', () => {
     event.request.locale = 'en-US'
     const succeed = data => {
