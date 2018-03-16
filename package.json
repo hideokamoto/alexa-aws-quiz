@@ -15,6 +15,7 @@
   "author": "hidetaka okamoto",
   "license": "MIT",
   "dependencies": {
+    "alexa-logger": "^1.1.2",
     "alexa-sdk": "^1.0.19",
     "ssml-builder": "^0.4.1"
   },

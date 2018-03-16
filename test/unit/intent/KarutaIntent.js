@@ -29,6 +29,14 @@ describe('LaunchKarutaIntent', () => {
     }
     executeFunction(event, { succeed, fail }, handler)
   })
+  it('should include valid game type', () => {
+    event.request.locale = 'ja-JP'
+    const succeed = data => {
+      const { sessionAttributes } = data
+      assert.equal(sessionAttributes.STATE, '_STARTMODE')
+    }
+    executeFunction(event, { succeed, fail }, handler)
+  })
   it('start karuta in English', () => {
     event.request.locale = 'en-US'
     const succeed = data => {
@@ -47,4 +55,17 @@ describe('LaunchKarutaIntent', () => {
     }
     executeFunction(event, { succeed, fail }, handler)
   })
+  /*
+  it('', () => {
+    evnet = {
+
+    }
+    const succeed = data => {
+      const { response } = data
+      const { outputSpeech } = response
+      assert.notEqual(outputSpeech.ssml.indexOf('カルタゲームを始めます。'), -1)
+    }
+    executeFunction(event, { succeed, fail }, handler)
+  })
+  */
 })
